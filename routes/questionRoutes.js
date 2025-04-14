@@ -1,20 +1,15 @@
 const express = require('express')
 const router = express.Router()
+//imported
+const {postQuestions, getAll , getSingle} = require('../controller/questionController')
 
 // post a new question
-router.post('/ask', (req, res) => {
-  res.send('Question posted successfully!')
-})
+router.post('/ask', postQuestions)
 
 // get all questions
-router.get('/all', (req, res) => {
-  res.send('Here are all the questions!')
-})
+router.get('/all', getAll )
 
 // get a single question by id
-router.get('/:id', (req, res) => {
-  const questionId = req.params.id
-  res.send(`Here is the question with id: ${questionId}`)
-})
+router.get('/:id', getSingle)
 
 module.exports = router

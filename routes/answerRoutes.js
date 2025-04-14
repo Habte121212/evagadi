@@ -1,21 +1,14 @@
 const express = require('express')
 const router = express.Router()
-
+// imported
+const {postAnswer,getAll, getSingle} = require("../controller/answerController")
 // post a new answer
-router.post('/reply', (req, res) => {
-  res.send('Answer posted successfully!')
-})
+router.post('/reply', postAnswer)
 
 // get all answers for a question
-router.get('/all/:questionId', (req, res) => {
-  const questionId = req.params.questionId
-  res.send(`Here are all answers for question id: ${questionId}`)
-})
+router.get('/all/:questionId', getAll)
 
 // get a single answer by id
-router.get('/:id', (req, res) => {
-  const answerId = req.params.id
-  res.send(`Here is the answer with id: ${answerId}`)
-})
+router.get('/:id',getSingle)
 
 module.exports = router

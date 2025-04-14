@@ -8,11 +8,11 @@ app.use('/api/users', userRoutes)
 
 //questions route middleware
 const questioRoutes = require("./routes/questionRoutes")
-app.use('./api/users', questioRoutes)
+app.use('/api/users', questioRoutes)
 
 // answer route middleware
 const answerRoutes = require('./routes/answerRoutes')
-app.use('./api/users', answerRoutes)
+app.use('/api/users', answerRoutes)
 
 app.listen(port, (err)=>{
   if(err){
