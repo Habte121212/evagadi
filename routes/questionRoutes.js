@@ -1,19 +1,21 @@
 const express = require('express')
 const router = express.Router()
-//imported
+
+// Authentication middleware
+const authoMiddleware = require('../middleware/authoMiddleware')
+
+// Imported controller functions
 const {
   postQuestions,
   getAll,
   getSingle,
 } = require('../controller/questionController')
 
-// post a new question
-router.post('/ask', postQuestions)
+// Public routes
+router.get('/all', getAll) // get all questions
+router.get('/:id', getSingle) // get a single question by id
 
-// get all questions
-router.get('/all', getAll)
-
-// get a single question by id
-router.get('/:id', getSingle)
+// Protected routes
+router.post('/ask', authoMiddleware, postQuestions) // post a new question (requires login)
 
 module.exports = router

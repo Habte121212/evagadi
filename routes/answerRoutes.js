@@ -1,14 +1,21 @@
 const express = require('express')
 const router = express.Router()
-// imported
-const {postAnswer,getAll, getSingle} = require("../controller/answerController")
-// post a new answer
-router.post('/reply', postAnswer)
 
-// get all answers for a question
+const {
+  postAnswer,
+  getAll,
+  getSingle,
+} = require('../controller/answerController')
+
+const authoMiddleware = require('../middleware/authoMiddleware')
+
+// Post a new answer - Requires authentication
+router.post('/reply', authoMiddleware, postAnswer)
+
+// Get all answers for a specific question
 router.get('/all/:questionId', getAll)
 
-// get a single answer by id
-router.get('/:id',getSingle)
+// Get a single answer by ID
+router.get('/:id', getSingle)
 
 module.exports = router

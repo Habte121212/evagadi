@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 //authonthication middleware
-const authoMiddleware = require('../middleware/authenfication')
+const authoMiddleware = require('../middleware/authoMiddleware')
 
 const {
   register,
@@ -12,7 +12,7 @@ const {
 //public
 router.post('/register', register)
 router.post('/login', login)
-//protect 
-router.get('/check',authoMiddleware ,checkUser)
+//protect
+router.get('/check', authoMiddleware, checkUser)
 
 module.exports = router
