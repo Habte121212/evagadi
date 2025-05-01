@@ -1,15 +1,13 @@
 const jwt = require('jsonwebtoken')
 
 async function authoMiddleware(req, res, next) {
-  const authHeader = req.headers.authorization
+  const token = req.cookies.token
 
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+  if (!token) {
     return res
       .status(401)
       .json({ msg: 'Authentication token missing or invalid' })
   }
-
-  const token = authHeader.split(' ')[1]
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET)

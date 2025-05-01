@@ -1,0 +1,194 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Styles */
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Full page container */
+.register {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Main card wrapper */
+.registerWrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Left side - Form */
+.registerLeft {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Right side - Image and description */
+.registerRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #f0f0f0, #e0e0e0);
+  padding: 2rem;
+  text-align: center;
+}
+
+.registerimg img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.registerimg img:hover {
+  transform: scale(1.05);
+}
+
+.registerdsc {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+/* Form Styles */
+.registerBox {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.registerInput {
+  height: 2.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  padding-left: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.registerInput:focus {
+  outline: none;
+  border-color: #1775ee;
+  box-shadow: 0 0 6px rgba(23, 117, 238, 0.4);
+}
+
+/* Primary sign-up button */
+.registerButton {
+  height: 3.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #1775ee;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.registerButton:hover {
+  background-color: #156ed0;
+}
+
+/* Secondary login button */
+.registerRegisterButton {
+  height: 3.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #42b72a;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.registerRegisterButton:hover {
+  background-color: #36a420;
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .registerWrapper {
+    flex-direction: column;
+  }
+
+  .registerLeft,
+  .registerRight {
+    width: 100%;
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .registerimg img {
+    width: 180px;
+  }
+
+  .registerdsc {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 768px) {
+  .registerWrapper {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .registerRight {
+    display: none;
+  }
+
+  .registerLeft {
+    padding: 1.5rem 1rem;
+    align-items: center;
+  }
+
+  .registerBox {
+    max-width: 100%;
+  }
+
+  .registerInput,
+  .registerButton,
+  .registerRegisterButton {
+    font-size: 0.95rem;
+    height: 2.8rem;
+  }
+}

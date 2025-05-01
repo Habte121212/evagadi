@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-//authonthication middleware
+// authentication middleware
 const authoMiddleware = require('../middleware/authoMiddleware')
 
 const {
@@ -9,10 +9,10 @@ const {
   checkUser,
 } = require('../../evagadi/controller/userController')
 
-//public
+// public
 router.post('/register', register)
 router.post('/login', login)
-//protect
+// protected
 router.get('/check', authoMiddleware, checkUser)
 
 module.exports = router

@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black; /* Set white background */
+  padding: 20px 40px;
+  border-top: 1px solid #ddd;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footerLogo img {
+  height: 40px;
+}
+
+.footer span {
+  margin: 10px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  color: #ff6600; /* Optional: hover color like Evangadi orange */
+  text-decoration: underline;
+}
